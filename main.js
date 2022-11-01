@@ -98,7 +98,7 @@ function compare(arr) {
 compare(week)
 
 function sunday(str) {
-    if (str.includes("Sunday") === true) {
+    if (str.includes("Sunday")) {
         return "That's nice"
     }
     else {
@@ -254,7 +254,7 @@ let citizen2 = createCitizen("tomi", "culo", 27)
 
 // console.log(citizen2);
 
-// Objetos .6 
+// Objetos .6 / 7
 
 function checkVoting(obj) {
     if (obj.canVote == true) {
@@ -268,17 +268,17 @@ function checkVoting(obj) {
 // console.log(checkVoting(citizen2));
 // console.log(citizen2);
 
-// Objetos .7
+// Objetos .8
 
-function showValues (obj) {
-return Object.values(obj)
+function showValues(obj) {
+    return Object.values(obj)
 }
 // console.log(showValues(citizen1));
 
-// Objetos .8 
+// Objetos .9
 
-function deleteLastProp (obj) {
-    if (Object.keys(obj) > 4){
+function deleteLastProp(obj) {
+    if (Object.keys(obj) > 4) {
         return obj.pop()
     }
     else {
@@ -287,3 +287,80 @@ function deleteLastProp (obj) {
 }
 
 // console.log(deleteLastProp(citizen2));
+
+// Objetos .10
+
+let player1 = {
+    name: "Tyler",
+    HP: 100,
+    damage: 15
+}
+
+let player2 = {
+    name: "Chuck",
+    HP: 100,
+    damage: 15
+}
+
+function vs(p1, p2) {
+    let rounds = 0
+    for (let i = 0; i <= p2.HP; i++) {
+     p1.attack = (enemy) => {
+        enemy.HP -=p1.damage
+        if (enemy.hp <= 0) {
+            enemy.HP = 0
+        }
+     }
+     p1.attack(p2)
+     rounds++   
+    }
+    console.log(`${p1.name} ha derrotado a ${p2.name} en ${rounds} rondas`);
+}
+
+// vs(player1, player2)
+
+// Repaso_JS_fundamentals
+
+// Ejercicio .1
+
+let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+function sumOdd(arr) {
+    let sum = 0
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 !== 0) {
+            sum += arr[i]
+        }       
+    }
+    return sum
+}
+// console.log(sumOdd(nums))
+
+// Ejercicio .2 
+
+function arrReverse(arr) {
+    for (var i = arr.length - 1; i >= 0; i--) {
+        console.log(arr[i]);
+    }  
+}
+
+// arrReverse(nums)
+
+//Ejercicio .3
+
+array1 = [1,0,2,3,4];  
+array2 = [3,5,6,7,8,13];
+
+// function sumArr(arr1, arr2) {
+//     for (let i = arr1; i <= arr2.length; i++) {
+//         let sum = i + arr2[0]
+//         if (arr1 < arr2.length) {
+//             sum
+//             arr2 ++
+//         }
+//         return sum
+//     }
+// }
+
+
+// console.log(sumArr(array1, array2));
